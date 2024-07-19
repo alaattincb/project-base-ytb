@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const { CONNECTİON_STRING } = require("../config");
+const { CONNECTION_STRING } = require("../config");
 
 
 let instance = null;
@@ -17,7 +17,7 @@ class Database {
     async connect(options) {
         try {
             console.log("DB Connecting...");
-            let db = await mongoose.connect(CONNECTİON_STRING);
+            let db = await mongoose.connect(CONNECTION_STRING, {});
             this.mongoConnection = db;
             console.log("DB Connected.");
         } catch (err) {
